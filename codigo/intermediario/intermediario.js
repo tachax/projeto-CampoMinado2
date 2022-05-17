@@ -57,7 +57,6 @@ function jogada(ident) {
   if (PRIMEIROCLIQUE) {
     gerarBombas()
     mapearBombas()
-    console.log(tabuleiro)
     PRIMEIROCLIQUE = false;
   }
 
@@ -78,13 +77,11 @@ function indiceMatriz(ident) {
       //linha
       for (let j = 0; j < i; j++) {
         identLin += ident[j]
-        console.log(identLin)
       }
 
       //coluna
       for (let j = i + 1; j < ident.length - 1; j++) {
         identCol += ident[j]
-        console.log(identCol)
       }
 
     }
@@ -187,21 +184,18 @@ function redorDoVazio() {
   //verifica se é a primeira linha do tabuleiro
   if (identLin == 0) {
     for (let i = identLin; i < identLin + 2; i++) {
-      console.log('i ' + i)
       redorDoVazioColunas(i, zerosAchados)
     }
 
     //verifica se é a última linha do tabuleiro
   } else if (identLin == tabuleiro.length - 1) {
     for (let i = identLin - 1; i < identLin + 1; i++) {
-      console.log('i ' + i)
       redorDoVazioColunas(i, zerosAchados)
     }
 
     //restante das linhas
   } else {
     for (let i = identLin - 1; i < identLin + 2; i++) {
-      console.log('i ' + i)
       redorDoVazioColunas(i, zerosAchados)
     }
   }
@@ -217,25 +211,19 @@ function redorDoVazioColunas(i, zerosAchados) {
   var numeros = '12345678'
 
   for (let j = identCol - 1; j < identCol + 2; j++) {
-    console.log('j ' + j)
 
     if (j != identCol || i != identLin) {
 
       if (tabuleiro[i][j] == 0) {
-        console.log('tem 0 ao redor')
         //remonta o id do botão
         revelarNum = String(i) + 'l' + String(j) + 'c'
         zerosAchados[zerosAchados.length] = revelarNum;
-        console.log('achados ' + zerosAchados)
         verificarClicados(i, j, revelarNum)
-        // identLin = i
-        // identCol = j
 
       } else {
 
         for (let k = 0; k < numeros.length; k++) {
           if (tabuleiro[i][j] == numeros[k]) {
-            console.log('tem num ao redor')
             revelarNum = String(i) + 'l' + String(j) + 'c'
             verificarClicados(i, j, revelarNum)
 
