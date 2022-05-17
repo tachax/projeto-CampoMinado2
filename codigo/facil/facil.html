@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="facil.js"></script>
+    <link rel="stylesheet" href="facil.css" />
+    <title>Nível Fácil</title>
+  </head>
+
+  <body>
+
+    <div id="preparado">
+      <h4>Preparado?</h4>
+      <button id="btMontar" onclick="montarTabuleiro()">Sim</button>
+    </div>
+    
+    <div id="jogo">
+      <div id="opcoesJogo">
+        <select onchange="trocarNiveis()" name="" id="niveis">
+          <option value="facil">FÁCIL</option>
+          <option value="intermed">INTERMEDIÁRIO</option>
+          <option value="dificil">DIFÍCIL</option>
+        </select>
+        <div id="extrasJogo">
+          <p>🙂</p> 
+          <p>||</p>
+          <p id="bandeiras">🚩10</p>
+        </div>
+      </div>
+
+      <div id="tabuleiro">
+        <table align="center" id='tabela'></table>
+      </div>
+    </div>
+  
+  </body>
+</html>
